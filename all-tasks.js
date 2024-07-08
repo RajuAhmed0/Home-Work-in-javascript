@@ -36,39 +36,21 @@ console.log("minute:", minute,);
 
 
 
-// find the leapyears
-// function leapYear(year) {
-//     const calculation = year % 4;
-//     let isLeapYear;
-//     if (calculation === 0) {
-//         isLeapYear = true;
-//     } else {
-//         isLeapYear = false;
-//     }
-//     return isLeapYear;
-// }
-
-
-// const raju = [2023, 2024, 2025, 2028, 2030];
-// const isLeapYear = leapYear(raju);
-// console.log(isLeapYear);
-
-
-
 // program to check leap year
-function checkLeapYear(year) {
+const years = [2023, 2024, 2025, 2028, 2030];
 
-    //three conditions to find out the leap year
-    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
-        console.log(year + ' is a leap year');
-    } else {
-        console.log(year + ' is not a leap year');
+function LeapYear(years) {
+    let output = [];
+    for (let i = 0; i < years.length; i++) {
+        if ((years[i] % 4 == 0 && years[i] % 100 !== 0) || (years[i] % 400 == 0)) {
+          output.push(years[i]);
+        }
     }
+    return output;
 }
 
-
-// let allyears = [2023, 2024, 2025, 2028, 2030]
-const year = checkLeapYear(2024);
+const allYears = LeapYear(years);
+console.log('leap years',allYears);
 
 
 
